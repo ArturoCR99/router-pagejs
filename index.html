@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <!-- Contenido dinámico se cargará aquí -->
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/page/page.min.js"></script>
+    <script>
+        // Definimos las funciones para cada ruta
+        function showHome() {
+            document.getElementById('content').innerHTML = '<h2>Home Page</h2><p>Welcome to the home page!</p>';
+        }
+
+        function showAbout() {
+            document.getElementById('content').innerHTML = '<h2>About Page</h2><p>Learn more about us here.</p>';
+        }
+
+        function showContact() {
+            document.getElementById('content').innerHTML = '<h2>Contact Page</h2><p>Contact us here.</p>';
+        }
+
+        // Configuramos las rutas con page.js
+        page('/', showHome);
+        page('/about', showAbout);
+        page('/contact', showContact);
+
+        // Iniciamos page.js para escuchar los cambios de ruta
+        page();
+    </script>
+</body>
+</html>
+
+
